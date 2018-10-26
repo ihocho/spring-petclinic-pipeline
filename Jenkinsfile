@@ -4,6 +4,7 @@
 
 pipeline {
   agent none
+/*	
   stages {
     stage('Build') {
       agent {
@@ -27,12 +28,12 @@ pipeline {
       }
     }
   }
-
+*/
   post {
     always {
 	  /* Use slackNotifier.groovy from shared library and provide current build result as parameter */   
-        slackNotifier(currentBuild.currentResult)
-        cleanWs cleanWhenFailure: false
+//        slackNotifier(currentBuild.currentResult)
+        cleanWs()
     }
   }
 }
