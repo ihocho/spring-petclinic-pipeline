@@ -1,5 +1,7 @@
 #!/bin/env groovy
 
+@Library('jenkins-shared-library')
+
 pipeline {
   agent none
   stages {
@@ -23,6 +25,14 @@ pipeline {
             sh "docker build -t petclinic ."
         }
       }
+    }
+  }
+
+  post {
+    always {
+	  /* Use slackNotifier.groovy from shared library and provide current build result as parameter */   
+        slackNotifier(currentBuild.currentResult)
+        cleanWs()
     }
   }
 }
