@@ -4,6 +4,10 @@
 
 pipeline {
   agent none
+	
+  stage('Echo') {
+	  echo "test"
+  }
 /*	
   stages {
     stage('Build') {
