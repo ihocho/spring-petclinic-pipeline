@@ -6,8 +6,10 @@ pipeline {
   agent none
 
   stages {
-    stage('Echo') {
-	echo "test"
+    stage('Build') {
+      steps {
+        echo 'Building..'
+      }
     }
   }	  
 /*	
