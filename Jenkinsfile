@@ -18,8 +18,9 @@ pipeline {
       steps {
         script {
             pom = readMavenPom file: 'pom.xml'
-            TAG = pom.version
-            sh "docker build -t petclinic:${TAG} ."
+//            TAG = pom.version
+//            sh "docker build -t petclinic:${TAG} ."
+            sh "docker build -t petclinic ."
         }
       }
     }
