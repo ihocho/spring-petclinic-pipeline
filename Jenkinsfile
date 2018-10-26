@@ -4,15 +4,16 @@
 
 pipeline {
   agent any
-
+/*
   stages {
     stage('Build') {
       steps {
         echo 'Building..'
       }
     }
-  }	  
-/*	
+  }
+*/  
+	
   stages {
     stage('Build') {
       agent {
@@ -36,11 +37,12 @@ pipeline {
       }
     }
   }
-*/
+
   post {
     always {
 	  /* Use slackNotifier.groovy from shared library and provide current build result as parameter */   
-//        slackNotifier(currentBuild.currentResult)
+        slackNotifier(currentBuild.currentResult)
+	 /* clean up workspace -> To use, you must set "agent"  not "agent none" */
         deleteDir()
     }
   }
