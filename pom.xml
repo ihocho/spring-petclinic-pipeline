@@ -291,15 +291,15 @@
     <!-- Maven plugin versions are mentioned in order to guarantee the build reproducibility in the long term -->
     <build>
         <defaultGoal>install</defaultGoal>
-        <testResources>
+        <!--testResources>
             <testResource>
-                <!-- declared explicitly so Spring config files can be placed next to their corresponding JUnit test class  -->
+                < declared explicitly so Spring config files can be placed next to their corresponding JUnit test class  >
                 <directory>${project.basedir}/src/test/java</directory>
             </testResource>
             <testResource>
                 <directory>${project.basedir}/src/test/resources</directory>
             </testResource>
-        </testResources>
+        </testResources-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
